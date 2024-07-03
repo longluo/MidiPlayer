@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdk 30
+
+    namespace "me.longluo.mididriver"
+
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+
+        // cmake {
+        //     path 'src/main/jni/CMakeLists.txt'
+        // }
+    }
+
+    defaultConfig {
+        minSdk 22
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildFeatures {
+        prefab true
+    }
+
+    compileOptions {
+        encoding = 'UTF-8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        disable 'OldTargetApi', 'ExpiredTargetSdkVersion'
+    }
+}
+
+dependencies {
+    implementation 'com.google.oboe:oboe:1.7.0'
+}
+
+

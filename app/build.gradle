@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk 31
+
+    namespace "me.longluo.midiplayer"
+
+    defaultConfig {
+        applicationId "me.longluo.midiplayer"
+        minSdk 22
+        targetSdk 30
+        versionName "1.0"
+        versionCode 1
+    }
+
+    compileOptions {
+        encoding = 'UTF-8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        disable 'IconMissingDensityFolder', 'ExpiredTargetSdkVersion',
+            'AllowBackup', 'OldTargetApi', 'NonConstantResourceId'
+    }
+}
+
+dependencies {
+    implementation project(':library')
+}
